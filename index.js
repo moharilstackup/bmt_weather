@@ -35,7 +35,7 @@ app.post("/", (req, resp) => {
 
                 console.log(body)
                 if (body.cod == 200) {
-                    response_text = ` Currently in ${location}, its ${body.weather[0].description}`
+                    response_text = ` Currently in ${location} in ${body.sys.country}, its ${body.weather[0].description}`
                     console.log(response_text)
                     resp.json({ "fulfillmentText": response_text })
                 } else {
